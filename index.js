@@ -31,13 +31,13 @@ switch (args[0].toLowerCase()) {
     break;
     case "dmall":
     if (args.length >= 2) {
-        if (message.member.roles.find("name", "OWNER")) {
+        if (message.member.roles.find("name", "Owner")) {
             args.shift();
             let user = message.mentions.users.first();
             let users = message.guild.members; 
             users.forEach(user => user.send(" " + args.slice(1).join(" ")));
         } else {
-            message.channel.send("You must have the OWNER role to use this command!");
+            message.channel.send("You must have the Owner role to use this command!");
         }
     } else {
         message.channel.send("Please use this format `~DMALL (Message)`")
@@ -52,13 +52,13 @@ switch (args[0].toLowerCase()) {
         break;  
     case "dm":
     if (args.length >= 3) {
-        if (message.member.roles.find("name", "OWNER")) {
+        if (message.member.roles.find("name", "Owner")) {
             args.shift();
             let user = message.mentions.users.first();
             user.send(args.slice(1).join(" "));
             message.channel.send("You're DM message is sent! :white_check_mark:");
         } else {
-            message.channel.send("You must have the OWNER role to use this command!");
+            message.channel.send("You must have the Owner role to use this command!");
         }
     } else {
         message.channel.send("Please use this format `~DM @(user) (Message)`")
